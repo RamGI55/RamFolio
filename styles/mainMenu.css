@@ -1,0 +1,50 @@
+﻿@import url("styles/helpers.css");
+
+.mainMenu {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    font-size: 3rem;
+    margin-top: 50px;
+    min-height: calc(100vh - 100px);
+    align-items: baseline;
+    justify-content: center;
+    padding : 150px;
+}
+
+.mainMenu-item{ position: relative;
+color: rgba(241, 241, 241, 0.95);
+cursor: pointer;
+    font: bold 5rem 'Gabarito';
+transition:color .3s ease;
+font-weight: 700;
+}
+
+.mainMenu-item:hover{
+    color: darkorange;
+}
+.mainMenu-item:before{
+    content:attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition:width .4s ease;
+}
+.mainMenu-item:hover::before{
+    width: 100%;
+}
+
+.cursor{
+    position: absolute;
+    left:-4rem;
+    top:0;
+    font-size: 2rem;
+    opacity: 0;
+    transition: top .3s ease, opacity .3s ease;
+}
+.mainMenu-item:hover ~.cursor{
+    opacity: 1;
+}
