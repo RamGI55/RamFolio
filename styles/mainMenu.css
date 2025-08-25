@@ -12,6 +12,12 @@
     padding : 150px;
 }
 
+.mainMenu-item-wrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
 .mainMenu-item{ position: relative;
 color: rgba(241, 241, 241, 0.95);
 cursor: pointer;
@@ -21,7 +27,7 @@ font-weight: 700;
 }
 
 .mainMenu-item:hover{
-    color: darkorange;
+    color: darkorchid;
 }
 .mainMenu-item:before{
     content:attr(data-text);
@@ -41,10 +47,26 @@ font-weight: 700;
     position: absolute;
     left:-4rem;
     top:0;
+    transform: translateY(-50%);
     font-size: 2rem;
     opacity: 0;
-    transition: top .3s ease, opacity .3s ease;
+    color: darkorchid;
+    transition: opacity .3s ease;
 }
 .mainMenu-item:hover ~.cursor{
     opacity: 1;
+}
+
+@media (max-width:768px){
+    .mainMenu{
+        padding: 50px;
+
+    }
+    .mainMenu-item{
+        font-size: 3rem;
+    }
+    .cursor{
+        left: -2.5rem;
+        font-size:1.5rem;
+    }
 }
